@@ -5,3 +5,25 @@ sources:
     schema: SOURCE_DATA
     tables:
       - name: ABC_BANK_POSITION
+        columns:
+          - name: ACCOUNTID
+            tests:
+              - not_null
+
+          - name: SYMBOL
+            description: The symbol of the security at ABC Bank.
+            tests:
+              - unique
+              - not_null
+
+          - name: DESCRIPTION
+            description: The name of the security at ABC Bank.
+            tests:
+              - not_null
+
+          - name: EXCHANGE
+            description: >
+              The short name or code of the exchange
+              where the security is traded.
+            tests:
+              - not_null    
